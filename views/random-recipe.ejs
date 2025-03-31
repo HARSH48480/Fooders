@@ -1,0 +1,44 @@
+<% if(recipe != null){%>
+
+   <h1 class="pb-4">Random Recipe</h1>
+
+    
+      <div class="row">
+        <div class="col-12 col-md-4 gap-2">
+            <img src="/uploads/<%- recipe.image %>" class="img-fuild sticky-top recipe--image" style="top:20px;" alt="<%- recipe.name %>" loading="lazy" />
+        </div>
+
+        <div class="col-12 col-md-8">
+            <div class="row">
+                <div class="col-12"> 
+                    <h1><%- recipe.name %></h1>
+                </div>
+                <div class="col-12 mb-4"><i class="bi bi-tag"> <%- recipe.category %> </i></div>
+                <div class="col-12" style="white-space: pre-line;">
+                    <h4>Cooking Instruction</h4>
+                    <%- recipe.description %>
+                </div>
+            </div>
+
+            <div class="row pt-4">
+                <div class="col-12">
+                    <h4>Ingredients</h4>
+                    <ul class="list-group list-group-flush">
+                        <% if(recipe.ingredients.length >0 ){ %>
+                            <% recipe.ingredients.forEach( function(ingredient,index) { %>
+                                <li class="li__color"><%- ingredient %>  </li>
+                             <% }) %>
+                        <% } %>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+      </div>
+
+
+
+
+<% } else { %>
+      <h1> OOPs , this recipe is not present. </h1>
+    <% } %>

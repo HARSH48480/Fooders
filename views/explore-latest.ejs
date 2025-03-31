@@ -1,0 +1,29 @@
+<h1 class="pb-4">Explore Latest</h1>
+
+<div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+        
+    <% if(typeof recipe !=='undefined' && recipe.length>0) { %>
+        <% recipe?.forEach(function (foodItem,index) { %>
+    <a href="/recipe/<%= foodItem._id  %>" class="col text-center category__link">
+        <div class="category__img category__img--large shadow">
+            <img src="/uploads/<%= foodItem.image %>" alt="<%= foodItem.name %>" loading="lazy" >
+        </div>
+        <div class="pt-1">
+            <%= foodItem.name %>
+        </div>
+    </a>
+    <% }) %>
+    <% } else { %>
+        <div class="content-wrapper">
+            <div class="no-results-container ">
+                <div class="no-results-content">
+                    <h1>No Recipes Found</h1>
+                    <p>Sorry, we couldn't find any recipes for this category.</p>
+                    <img src="/img/error.png" alt="No Recipes">
+                    <a href="/" class="btn">Go Back Home</a>
+                </div>
+            </div>
+        </div>
+        
+    <% } %>
+</div>

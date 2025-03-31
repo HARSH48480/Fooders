@@ -1,0 +1,2 @@
+xknzf9U2RufEqN4e <- Password
+mongodb+srv://abhinavshakya1608:xknzf9U2RufEqN4e@cluster0.sejhqa6.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
